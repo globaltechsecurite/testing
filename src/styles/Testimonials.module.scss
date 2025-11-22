@@ -1,0 +1,90 @@
+@use "vars" as v;
+
+._testimonials {
+  width: v.$fw;
+  @include v.flexCenter();
+  padding: 2.5em 0 2em 0;
+  &_header {
+    width: 80%;
+    &_title {
+      h4 {
+        font-size: 3rem;
+        margin: 0;
+      }
+    }
+    &_subTitle {
+      width: v.$fw;
+      @include v.flexCenter(v.$cl, flex-end);
+      align-items: flex-end;
+      p {
+        margin-top: 0;
+        font-weight: 600;
+        font-style: italic;
+        font-size: 1rem;
+        color: v.$dark;
+      }
+    }
+  }
+  &_marquee {
+    width: v.$fw;
+    @include v.flexCenter();
+    &_each {
+      @include v.flexCenter();
+      width: 340px;
+      min-height: 400px;
+      background-image: url("/assets/paper.svg");
+      padding: 0 1em;
+      background-size: v.$cv;
+      color: v.$dark;
+      margin: 0 1em;
+      position: v.$re;
+      text-align: v.$c;
+      &::after {
+        position: v.$ab;
+        content: "MS";
+        font-size: 10rem;
+        color: v.$bg-light;
+      }
+      &_para {
+        width: v.$fw;
+        position: v.$re;
+        z-index: 1;
+        p {
+          margin: 0;
+          line-height: 2;
+          font-weight: 600;
+          font-style: italic;
+        }
+      }
+      &_clientName {
+        position: v.$ab;
+        bottom: 10%;
+        background-color: v.$wt;
+        padding: 0.5em 1em;
+        min-width: 150px;
+        &::first-letter {
+          text-transform: v.$upper;
+        }
+        span {
+          font-weight: 600;
+        }
+      }
+      &_stars {
+        position: v.$ab;
+        bottom: 2%;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  ._testimonials {
+    width: v.$fw;
+    @include v.flexCenter();
+    padding: 0;
+    margin: 1em 0;
+    &_header {
+      width: 95%;
+    }
+  }
+}

@@ -1,0 +1,219 @@
+@use "vars" as v;
+
+._solutions {
+  width: v.$fw;
+  min-height: v.$vh;
+  @include v.flexCenter();
+  justify-content: flex-start;
+  overflow: v.$h;
+  position: v.$re;
+  &_hero {
+    width: v.$fw;
+    height: v.$vh;
+    background-image: url("/assets/garde-corps-en-verre.webp");
+    background-size: v.$cv;
+    background-position: v.$c;
+    @include v.flexCenter();
+    &_title,
+    &_para {
+      @include v.flexCenter();
+      width: 80%;
+    }
+    &_title {
+      h1 {
+        font-size: 5rem;
+        color: v.$text-color;
+        margin-bottom: 0;
+      }
+    }
+    &_para {
+      p {
+        text-align: v.$c;
+        color: v.$text-color;
+        line-height: 1.5;
+        strong {
+          color: v.$red;
+          text-transform: v.$upper;
+          font-family: v.$halv;
+        }
+      }
+    }
+  }
+  &_content {
+    width: 80%;
+    display: v.$g;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 1em;
+    position: v.$re;
+    z-index: 99;
+    border-radius: 10px;
+    &_each {
+      grid-column: span 5;
+      min-height: 400px;
+      background-image: url("/assets/solutions/SERVICE-DÉCOUPE-LASER-CNC.webp");
+      background-size: v.$cv;
+      background-position: v.$c;
+      border-radius: 20px;
+      position: v.$re;
+      &_title {
+        background-color: v.$bg-light;
+        position: v.$ab;
+        top: 0;
+        border-radius: 20px;
+        border-top-right-radius: 0;
+        border-bottom-left-radius: 0;
+        border-top-left-radius: 10px;
+        width: 60%;
+        min-height: 50px;
+        font-size: 2rem;
+        @include v.flexCenter();
+        &::after,
+        &::before {
+          content: "";
+          position: v.$ab;
+          width: 30px;
+          height: 30px;
+          box-shadow: 6px 6px 0 v.$bg-light;
+          border-bottom-right-radius: 20px;
+        }
+        &::before {
+          rotate: 180deg;
+          right: -30px;
+          top: 0px;
+        }
+        &::after {
+          left: 0px;
+          rotate: -180deg;
+          bottom: -30px;
+        }
+        h2 {
+          font-size: 0.6em;
+          margin: 0;
+        }
+      }
+      &:nth-child(2) {
+        background-image: url("/assets/solutions/ENCRE-GALAXY-BASE-DE-SOLVANT.webp");
+      }
+      &:nth-child(3) {
+        background-image: url("/assets/solutions/MODEL-LED-3-POINT.jpg");
+      }
+      &:nth-child(4) {
+        background-image: url("/assets/solutions/MODEL-LED-1-POINT-2-POINT.webp");
+      }
+      &:nth-child(5) {
+        background-image: url("/assets/solutions/TRANSFORMATEURS-LED.jpg");
+      }
+      &:nth-child(6) {
+        background-image: url("/assets/solutions/X-BANNER.webp");
+      }
+      &:nth-child(7) {
+        background-image: url("/assets/solutions/ROLL-UP.jpg");
+      }
+      &:nth-child(8) {
+        background-image: url("/assets/solutions/forex.jpg");
+      }
+      &:nth-child(9) {
+        background-image: url("/assets/solutions/PLIXIGLASS.jpg");
+      }
+      &:nth-child(10) {
+        background-image: url("/assets/solutions/ADHÉSIF-IMPRESSION.jpg");
+      }
+      &:nth-child(11) {
+        background-image: url("/assets/solutions/ORACAL-VINYLE.jpg");
+      }
+      &:nth-child(12) {
+        background-image: url("/assets/solutions/VINYLE-TRANSLUCIDE.jpg");
+      }
+      &:nth-child(13) {
+        background-image: url("/assets/solutions/FLEX-IMPRESSION.jpg");
+      }
+      &:nth-child(14) {
+        background-image: url("/assets/solutions/LEXAN.jpg");
+      }
+      &:nth-child(15) {
+        background-image: url("/assets/solutions/STOP-TROTTOIR.png");
+      }
+      &:nth-child(16) {
+        background-image: url("/assets/solutions/cadre-clic-clac.webp");
+      }
+      &:nth-child(17) {
+        background-image: url("/assets/solutions/RUBAN-LED.jpg");
+      }
+      &:nth-child(18) {
+        background-image: url("/assets/solutions/TROPHÉ.png");
+      }
+      &:nth-child(19) {
+        background-image: url("/assets/solutions/canvas.webp");
+      }
+      &:nth-child(20) {
+        background-image: url("/assets/solutions/VINYLE-ONE-WAY.webp");
+      }
+      &:nth-child(21) {
+        background-image: url("/assets/solutions/BÂCHE-FRONTLIT.jpg");
+      }
+      &:nth-child(22) {
+        background-image: url("/assets/solutions/PLAQUE-LED-SMD.webp");
+      }
+      &:nth-child(23) {
+        background-image: url("/assets/solutions/PORTE-AFFICHE-MENU.jpg");
+      }
+      &:nth-child(24) {
+        background-image: url("/assets/solutions/PORTE-BROCHURE.webp");
+      }
+      &:nth-child(25) {
+        background-image: url("/assets/solutions/compacto.webp");
+      }
+      &:nth-child(26) {
+        background-image: url("/assets/solutions/mamouni.webp");
+      }
+      &:nth-child(27) {
+        background-image: url("/assets/solutions/HÉLICE-HOLOGRAPHIQUE-PROJECTEUR-3D.jpg");
+      }
+      &:nth-child(28) {
+        background-image: url("/assets/solutions/RACLETTE.jpg");
+      }
+      &:nth-child(29) {
+        background-image: url("/assets/solutions/SILICONE-COLLE.jpg");
+      }
+      &:nth-child(30) {
+        background-image: url("/assets/solutions/FAUX-MARBRE-UV-PANNEL.webp");
+      }
+      &:nth-child(31) {
+        background-image: url("/assets/solutions/FILM-DÉCORATIFS-RÉFLECTIV.jpg");
+      }
+      &:last-child {
+        background-image: url("/assets/solutions/tube.jpg");
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  ._solutions {
+    &_hero {
+      text-align: v.$c;
+      &_title,
+      &_para {
+        @include v.flexCenter();
+        width: 95%;
+      }
+      &_title {
+        h1 {
+          font-size: 4rem;
+        }
+      }
+    }
+    &_content {
+      width: 95%;
+      &_each {
+        grid-column: span 10;
+        &_title {
+          width: 90%;
+          h2 {
+            font-size: 0.5em;
+          }
+        }
+      }
+    }
+  }
+}

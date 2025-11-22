@@ -1,0 +1,161 @@
+@use "vars" as v;
+._hero {
+  position: v.$re;
+  @include v.flexCenter();
+  width: 98%;
+  border-radius: 20px;
+  margin-top: 0.5em;
+  min-height: v.$vh;
+  overflow: v.$h;
+  &::before {
+    background-image: url("/assets/hero-main/bg-1.webp");
+    background-size: v.$cv;
+    background-position: v.$c;
+    width: v.$fw;
+    min-height: v.$vh;
+    position: v.$ab;
+    content: "";
+    top: 0;
+    border-radius: 20px;
+    scale: 1.6;
+  }
+  &_title {
+    @include v.flexCenter();
+    min-height: 60px;
+    min-width: 60%;
+    position: v.$ab;
+    top: 10px;
+    padding: 0 1em;
+    border-radius: 20px;
+    background-color: v.$bg-light;
+    padding-top: 0;
+    text-align: v.$c;
+    h1 {
+      text-align: v.$c;
+      margin: 0;
+      font-size: 2rem;
+      position: v.$re;
+      z-index: 1;
+      font-weight: v.$b;
+    }
+  }
+  &_playBtn {
+    background-color: v.$bg-light;
+    width: 90px;
+    height: 90px;
+    @include v.flexCenter();
+    display: v.$n;
+    position: v.$ab;
+    border-radius: 100px;
+    cursor: v.$p;
+    &::after {
+      position: absolute;
+      content: "";
+      border: 0.15em solid v.$bg-light;
+      height: 100px;
+      width: 100px;
+      border-radius: 100px;
+      padding: 0.1em;
+    }
+  }
+  &_videoHandler {
+    position: fixed;
+    height: v.$fw;
+    width: v.$fw;
+    background-color: rgba(0, 0, 0, 0.5);
+    top: 0;
+    left: 0;
+    z-index: calc(99 * 99);
+    @include v.flexCenter();
+    button {
+      border: 0.12em solid v.$dark;
+      border-radius: 20px;
+      margin: 0.2em;
+      width: 50%;
+      min-height: 50px;
+      position: v.$re;
+      z-index: 1;
+      @include v.flexCenter();
+      padding: 0.2em 0;
+      font-size: 1rem;
+      font-weight: 800;
+      background-color: v.$dark;
+      color: v.$text-color;
+    }
+    &_child {
+      width: 90%;
+      height: 90%;
+    }
+  }
+  &_para {
+    background-color: v.$bg-light;
+    width: 40%;
+    border-radius: 20px;
+    position: v.$ab;
+    bottom: 2%;
+    left: 2%;
+    padding: 1em;
+    p {
+      font-weight: 600;
+    }
+    button {
+      border: 0.12em solid v.$dark;
+      border-radius: 20px;
+      background-color: v.$tr;
+      margin: 0.2em;
+      width: v.$hw;
+      min-height: 50px;
+      padding: 0.2em 0;
+      font-weight: 800;
+      cursor: v.$p;
+    }
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  ._hero {
+    &_title {
+      h1 {
+        text-align: v.$c;
+        margin: 0;
+        font-size: 2rem;
+        position: v.$re;
+        z-index: 1;
+      }
+    }
+    &_para {
+      width: 90%;
+      button {
+        width: 90%;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 490px) {
+  ._hero {
+    &_playBtn {
+      display: v.$f;
+    }
+    &_title {
+      top: 0;
+      min-width: 98%;
+      h1 {
+        text-align: v.$c;
+        margin: 0;
+        font-size: 1.3rem;
+        position: v.$re;
+        z-index: 1;
+        margin: 0;
+      }
+    }
+
+    &_para {
+      width: 96%;
+      bottom: 0.5%;
+      button {
+        width: 90%;
+      }
+    }
+  }
+}

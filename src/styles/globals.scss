@@ -1,0 +1,87 @@
+@use "vars" as v;
+
+@font-face {
+  font-family: "helvetica neue heavy";
+  src: url("/font/helvetica-neue-heavy-italic.ttf");
+  font-display: swap;
+  font-style: italic;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  width: v.$fw;
+  height: v.$fw;
+  margin: 0;
+  padding: 0;
+  overflow-x: v.$h !important;
+  background-color: v.$bg-light;
+}
+
+::-webkit-scrollbar {
+  width: 0.6em;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  background: rgb(22, 21, 21);
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: v.$bg-light;
+}
+
+li {
+  list-style: v.$n !important;
+}
+
+input,
+textarea,
+button,
+select,
+span,
+img,
+div,
+a,
+p {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.lineChildren {
+  transform: translate(0px, 200px);
+}
+
+.lineParent {
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main_container {
+  visibility: v.$h;
+  @include v.flexCenter();
+}
+
+a {
+  text-decoration: v.$n !important;
+  color: inherit;
+}
+
+.react-pdf__Page__canvas {
+  background-color: red !important;
+}
+
+button {
+  font-family: v.$font !important;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  content: "";
+  display: v.$n;
+  font-size: 3rem;
+  width: 200px !important;
+  height: 200px !important;
+}

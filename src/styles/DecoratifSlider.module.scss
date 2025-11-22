@@ -1,0 +1,272 @@
+@use "vars" as v;
+
+._decoration {
+  height: v.$fw;
+  width: v.$fw;
+  color: v.$dark;
+  @include v.flexCenter();
+  margin-top: 1em;
+  overflow: v.$h;
+  &_header {
+    width: 80%;
+    @include v.flexCenter();
+    position: v.$re;
+    &_title {
+      font-size: 3rem;
+      h2 {
+        font-size: 1em;
+        margin: 0;
+        text-align: v.$c;
+      }
+    }
+    &_subtitle {
+      width: 60%;
+      p {
+        text-align: v.$c;
+        font-weight: 600;
+        color: #333;
+        line-height: 1.5;
+        strong {
+          color: v.$red;
+          text-transform: v.$upper;
+          font-family: v.$halv;
+        }
+      }
+    }
+  }
+  &_child {
+    width: 90%;
+    margin: 0.5em 0;
+    &_self {
+      width: v.$fw;
+      &_title {
+        font-size: 3rem;
+        position: v.$re;
+        margin-bottom: 0.3em;
+        &::after {
+          content: "";
+          position: v.$ab;
+          width: v.$fw;
+          border-radius: 20px;
+          height: 5px;
+          left: 0;
+          bottom: 0;
+          background-color: v.$dark;
+        }
+        h2,
+        p {
+          text-transform: v.$upper;
+        }
+        h2 {
+          font-size: 1em;
+          margin-bottom: 0;
+        }
+        p {
+          margin-top: 0;
+          font-size: 0.5em;
+          color: v.$grey;
+        }
+      }
+      &_list {
+        grid-column: span 9;
+        ul {
+          li {
+            font-size: 1em;
+            svg {
+              position: v.$re;
+              top: 4px;
+              margin: 0 0.5em;
+            }
+          }
+        }
+      }
+      &_child {
+        display: v.$g;
+        grid-template-columns: repeat(9, 1fr);
+        gap: 1em;
+        &_each {
+          grid-column: span 3;
+          min-height: 350px;
+          background-size: v.$cv;
+          background-position: v.$c;
+          border-radius: 20px;
+          position: v.$re;
+          &_title {
+            position: v.$ab;
+            left: 0;
+            top: 0;
+            background-color: v.$bg-light;
+            width: 65%;
+            height: 50px;
+            border-radius: 20px;
+            border-bottom-left-radius: 0;
+            border-top-right-radius: 0;
+            border-top-left-radius: 10px;
+            @include v.flexCenter();
+            &::after,
+            &::before {
+              content: "";
+              position: v.$ab;
+              width: 30px;
+              height: 30px;
+              box-shadow: 6px 6px 0 v.$bg-light;
+              border-bottom-right-radius: 20px;
+            }
+            &::before {
+              rotate: 180deg;
+              right: -30px;
+              top: 0px;
+            }
+            &::after {
+              left: 0px;
+              rotate: -180deg;
+              bottom: -30px;
+            }
+          }
+          &:first-child {
+            background-image: url("/assets/decoration/film-decoratif-chambre.avif");
+          }
+          &:nth-child(2) {
+            background-image: url("/assets/decoration/film-decoratif-bureau.jpg");
+          }
+          &:nth-child(3) {
+            background-image: url("/assets/decoration/film-decoratif-armoire.png");
+          }
+          &:nth-child(4) {
+            background-image: url("/assets/decoration/film-decoratif-cuisine.jpg");
+          }
+          &:nth-child(5) {
+            background-image: url("/assets/decoration/film-decoratif-plafond.jpg");
+            background-position: 10% 0%;
+          }
+          &:last-child {
+            background-image: url("/assets/decoration/film-decoratif-salle-de-bain.jpg");
+          }
+        }
+      }
+    }
+    &:nth-child(3) &_self_child {
+      &_each {
+        &:first-child {
+          background-image: url("/assets/decoration/vitrage-adhésif-dépoli-plein.jpeg");
+        }
+        &:nth-child(2) {
+          background-image: url("/assets/decoration/vitrage-adhésif-strié.jpeg");
+        }
+        &:nth-child(3) {
+          background-image: url("/assets/decoration/vitrage-adhésif-couleurs.jpg");
+        }
+        &:nth-child(4) {
+          background-image: url("/assets/decoration/vitrage-adhésif-motif.jpg");
+        }
+        &:last-child {
+          grid-column: span 6;
+          background-image: url("/assets/decoration/vitrage-adhésif-protection-solaire.jpg");
+        }
+      }
+    }
+    &:nth-child(4) &_self_child {
+      &_each {
+        &:first-child {
+          background-image: url("/assets/decoration/bardage.jpg");
+        }
+        &:nth-child(2) {
+          background-image: url("/assets/decoration/bardage-1.jpg");
+        }
+        &:nth-child(3) {
+          background-image: url("/assets/decoration/bardage-2.jpg");
+        }
+      }
+    }
+    &:nth-child(5) &_self_child {
+      &_each {
+        &:first-child {
+          background-image: url("/assets/decoration/dressing-1.webp");
+        }
+        &:nth-child(2) {
+          background-image: url("/assets/decoration/dressing.webp");
+        }
+        &:nth-child(3) {
+          background-image: url("/assets/decoration/dressing-1.jpeg");
+        }
+      }
+    }
+    &:nth-child(6) &_self_child {
+      &_each {
+        &:first-child {
+          background-image: url("/assets/decoration/marbre-1.jpg");
+        }
+        &:nth-child(2) {
+          background-image: url("/assets/decoration/marbre-2.webp");
+        }
+        &:nth-child(3) {
+          background-image: url("/assets/decoration/marbre-3.jpg");
+        }
+      }
+    }
+    &:nth-child(7) &_self_child {
+      &_each {
+        &:first-child {
+          background-image: url("/assets/decoration/stores-enrouleur-screen.jpg");
+        }
+        &:nth-child(2) {
+          background-image: url("/assets/decoration/stores-enrouleur-en-black.jpg");
+        }
+        &:nth-child(3) {
+          background-image: url("/assets/decoration/stores-enrouleur-jour-nuit.webp");
+        }
+        &:last-child {
+          grid-column: span 9;
+          background-image: url("/assets/decoration/stores-enrouleur-tringle-motorisé.jpg");
+        }
+      }
+    }
+    &:last-child &_self_child {
+      &_each {
+        &:first-child {
+          background-image: url("/assets/decoration/moustiquaire-plissée.webp");
+        }
+        &:nth-child(2) {
+          background-image: url("/assets/decoration/moustiquaire-enroulable.webp");
+        }
+
+        &:nth-child(3) {
+          background-image: url("/assets/decoration/moustiquaire-coulissante.jpg");
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 800px) {
+  ._decoration {
+    &_header {
+      width: 95%;
+      text-align: v.$c;
+      &_title {
+        font-size: 2rem;
+      }
+      &_subtitle {
+        width: v.$fw;
+      }
+    }
+    &_child {
+      width: 95%;
+      &_self {
+        width: v.$fw;
+        &_title {
+          font-size: 2rem;
+        }
+        &_list {
+          ul {
+            padding: 0;
+          }
+        }
+        &_child {
+          &_each {
+            grid-column: span 9 !important;
+          }
+        }
+      }
+    }
+  }
+}

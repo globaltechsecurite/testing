@@ -1,0 +1,199 @@
+@use "vars" as v;
+
+._projects {
+  height: v.$fw;
+  width: v.$fw;
+  color: v.$dark;
+  @include v.flexCenter();
+  margin-top: 1em;
+  overflow: hidden;
+  &_header {
+    width: 80%;
+    @include v.flexCenter();
+    position: v.$re;
+    &_title {
+      h2 {
+        font-size: 3rem;
+        margin: 0;
+      }
+    }
+    &_subtitle {
+      width: 60%;
+      p {
+        text-align: v.$c;
+        font-weight: 600;
+        color: #333;
+        line-height: 1.5;
+      }
+    }
+    &_nextBtn,
+    &_leftBtn {
+      position: v.$ab;
+      right: 0;
+      svg {
+        cursor: v.$p;
+        position: v.$ab;
+        width: 100px;
+      }
+    }
+    &_leftBtn {
+      left: 0;
+    }
+  }
+  &_child {
+    height: 500px;
+    width: v.$fw;
+    padding: 1em 0;
+    &_op {
+      width: 300px;
+      height: 450px;
+      background-color: v.$dark;
+      border-radius: 20px;
+      background-position: v.$c;
+      background-size: v.$cv;
+      font-size: 3rem;
+      position: v.$re;
+      &_title {
+        background-color: v.$bg-light;
+        width: v.$hw;
+        position: v.$ab;
+        top: 0;
+        border-radius: 20px;
+        border-top-right-radius: 0;
+        border-bottom-left-radius: 0;
+        border-top-left-radius: 10px;
+        &::after,
+        &::before {
+          content: "";
+          position: v.$ab;
+          width: 30px;
+          height: 30px;
+          box-shadow: 6px 6px 0 v.$bg-light;
+          border-bottom-right-radius: 20px;
+        }
+        &::before {
+          rotate: 180deg;
+          right: -30px;
+          top: 0px;
+        }
+        &::after {
+          left: 0px;
+          rotate: -180deg;
+          bottom: -30px;
+        }
+        h3 {
+          font-size: 0.5em;
+          margin: 0.5em 0;
+          text-transform: v.$upper;
+          color: v.$red;
+        }
+      }
+
+      &_date {
+        position: v.$ab;
+        bottom: 0;
+        right: 0;
+        background-color: v.$bg-light;
+        border-radius: 20px;
+        border-top-right-radius: 0;
+        border-bottom-left-radius: 0;
+        padding: 0.1em;
+        border-bottom-right-radius: 10px;
+        &::after,
+        &::before {
+          content: "";
+          position: v.$ab;
+          width: 30px;
+          height: 30px;
+          box-shadow: 6px 6px 0 v.$bg-light;
+          border-bottom-right-radius: 20px;
+        }
+        &::before {
+          rotate: 0deg;
+          right: 0px;
+          top: -30px;
+        }
+        &::after {
+          left: -30px;
+          rotate: 360deg;
+          bottom: 0px;
+        }
+        p {
+          margin: 0;
+          writing-mode: vertical-rl;
+          position: v.$re;
+          z-index: 1;
+        }
+      }
+
+      &:first-child {
+        background-image: url("/assets/projects/1.webp");
+      }
+
+      &:nth-child(2) {
+        background-image: url("/assets/projects/2.webp");
+      }
+
+      &:nth-child(3) {
+        background-image: url("/assets/projects/3.webp");
+      }
+
+      &:nth-child(4) {
+        background-image: url("/assets/projects/4.webp");
+      }
+
+      &:nth-child(5) {
+        background-image: url("/assets/projects/5.webp");
+      }
+
+      &:nth-child(6) {
+        background-image: url("/assets/projects/6.jpg");
+      }
+
+      &:nth-child(7) {
+        background-image: url("/assets/projects/7.jpg");
+      }
+
+      &:nth-child(8) {
+        background-image: url("/assets/projects/8.jpg");
+      }
+    }
+  }
+}
+@media only screen and (max-width: 800px) {
+  ._projects {
+    &_header {
+      width: 90%;
+      text-align: v.$c;
+      &_subtitle {
+        width: 90%;
+      }
+    }
+    &_child {
+      padding-top: 2.6em;
+    }
+  }
+}
+@media only screen and (max-width: 500px) {
+  ._projects {
+    &_header {
+      width: 95%;
+      text-align: v.$c;
+      &_subtitle {
+        width: v.$fw;
+      }
+      &_nextBtn,
+      &_leftBtn {
+        position: v.$ab;
+        right: 5%;
+        top: 104%;
+      }
+      &_leftBtn {
+        left: 5%;
+      }
+    }
+    &_child {
+      padding-top: 2.6em;
+    }
+  }
+}

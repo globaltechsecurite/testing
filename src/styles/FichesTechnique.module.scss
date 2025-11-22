@@ -1,0 +1,121 @@
+@use "vars" as v;
+
+._slider {
+  height: v.$fw;
+  width: v.$fw;
+  color: v.$dark;
+  @include v.flexCenter();
+  margin-top: 1em;
+  overflow: v.$h;
+  svg {
+    position: v.$re;
+    z-index: 1;
+    border-radius: 20px;
+  }
+  &_header {
+    width: 90%;
+    @include v.flexCenter();
+    position: v.$re;
+    &_title {
+      h4 {
+        font-size: 3rem;
+        margin: 0;
+      }
+    }
+    &_subtitle {
+      width: 60%;
+      p {
+        text-align: v.$c;
+        font-weight: 600;
+        color: #333;
+        line-height: 1.5;
+      }
+    }
+    &_nextBtn,
+    &_leftBtn {
+      position: v.$ab;
+      right: 0;
+      svg {
+        cursor: v.$p;
+        position: v.$ab;
+        width: 100px;
+      }
+    }
+    &_leftBtn {
+      left: 0;
+    }
+  }
+  &_child {
+    min-height: 500px;
+    width: 70%;
+    padding: 1em 0;
+    &_op {
+      @include v.flexCenter();
+      width: v.$fw;
+      border-radius: 20px;
+      background-position: v.$c;
+      background-size: v.$cv;
+      font-size: 3rem;
+      position: v.$re;
+      inset: 0;
+      img {
+        inset: 0;
+        border: 0.08em solid v.$dark;
+        border-radius: 10px;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 800px) {
+  ._slider {
+    &_header {
+      width: 90%;
+      text-align: v.$c;
+      &_subtitle {
+        width: 90%;
+      }
+    }
+    &_child {
+      width: 90%;
+      &_op {
+        width: v.$fw;
+        img {
+          width: v.$fw;
+          height: v.$fw;
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 500px) {
+  ._slider {
+    &_header {
+      width: 95%;
+      text-align: v.$c;
+      &_subtitle {
+        width: v.$fw;
+      }
+      &_nextBtn,
+      &_leftBtn {
+        position: v.$ab;
+        right: 5%;
+        top: 104%;
+      }
+      &_leftBtn {
+        left: 5%;
+      }
+    }
+    &_child {
+      min-height: v.$fw;
+      width: 98%;
+      margin-top: 2em;
+      &_op {
+        width: v.$fw;
+        img {
+          width: v.$fw;
+          height: v.$fw;
+        }
+      }
+    }
+  }
+}

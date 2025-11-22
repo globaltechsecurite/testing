@@ -1,0 +1,120 @@
+@use "vars" as v;
+
+._departments {
+  width: v.$fw;
+  min-height: 60vh;
+  @include v.flexCenter();
+  margin: 1.5em 0;
+  &_para {
+    width: 60%;
+    p {
+      text-align: v.$c;
+      font-weight: 600;
+      color: #333;
+      line-height: 1.5;
+      strong {
+        color: v.$red;
+        font-weight: v.$b;
+        font-family: v.$halv;
+      }
+    }
+  }
+  &_child {
+    width: 80%;
+    display: v.$g;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 2em;
+    &_each {
+      grid-column: span 4;
+      min-height: 200px;
+      border-radius: 20px;
+      background-position: v.$c;
+      background-size: v.$cv;
+      position: v.$re;
+      &_link {
+        position: v.$ab;
+        bottom: 0;
+        background-color: v.$bg-light;
+        border-radius: 20px;
+        border-top-left-radius: 0;
+        border-bottom-right-radius: 0;
+        min-width: 280px;
+        min-height: 30px;
+        border-bottom-left-radius: 10px;
+        @include v.flexCenter(v.$r);
+        a {
+          border: 0.12em solid v.$red;
+          border-radius: 100px;
+          margin: 0.2em;
+          width: v.$fw;
+          min-height: 50px;
+          position: v.$re;
+          z-index: 1;
+          @include v.flexCenter();
+          align-items: flex-start;
+          padding: 0.2em 0;
+          padding-left: 1em;
+          font-weight: 800;
+          color: v.$text-color;
+          background-color: v.$dark;
+          color: v.$text-color;
+          border-color: v.$wt;
+          span {
+            @include v.flexCenter(v.$cl, v.$c);
+            position: v.$ab;
+            right: 10px;
+            width: 40px;
+            height: 40px;
+            border-radius: v.$fw;
+            background-color: v.$tr;
+          }
+        }
+        &::after,
+        &::before {
+          content: "";
+          position: v.$ab;
+          width: 30px;
+          height: 30px;
+          box-shadow: 6px 6px 0 v.$bg-light;
+          border-bottom-right-radius: 20px;
+        }
+        &::before {
+          rotate: 90deg;
+          left: 0px;
+          top: -30px;
+        }
+        &::after {
+          right: -30px;
+          rotate: 90deg;
+          bottom: 0;
+        }
+      }
+      &:first-child {
+        background-image: url("/assets/pub-prod/aluminium.webp");
+      }
+      &:nth-child(2) {
+        background-image: url("/assets/pub-prod/vitrage.jpg");
+      }
+      &:nth-child(3) {
+        background-image: url("/assets/pub-prod/décoration.webp");
+      }
+      &:last-child {
+        background-image: url("/assets/pub-prod/pub-prod.webp");
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  ._departments {
+    &_para {
+      width: 90%;
+    }
+    &_child {
+      width: 90%;
+      &_each {
+        grid-column: span 8;
+      }
+    }
+  }
+}

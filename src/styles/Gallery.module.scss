@@ -1,0 +1,44 @@
+@use "vars" as v;
+._gallery {
+  width: v.$fw;
+  height: v.$fw;
+  background-color: v.$dark;
+  @include v.flexCenter();
+  overflow: v.$h;
+  &_header {
+    @include v.flexCenter();
+    width: 98%;
+    h1 {
+      margin: 0;
+      color: v.$text-color;
+      font-size: 8rem;
+    }
+  }
+  &_images {
+    min-height: 50vh;
+    margin: 0 auto;
+    width: min(1200px, 100%);
+    columns: 3 300px;
+    column-gap: 1em;
+    padding: 1em;
+    img,
+    video {
+      display: block;
+      width: v.$fw;
+      margin-bottom: 1em;
+      border-radius: 20px;
+    }
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  ._gallery {
+    &_header {
+      h1 {
+        margin: 0;
+        color: v.$text-color;
+        font-size: 3rem;
+      }
+    }
+  }
+}

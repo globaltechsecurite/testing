@@ -1,0 +1,56 @@
+@use "vars" as v;
+._referencies {
+  width: v.$fw;
+  padding: 1em 0;
+  @include v.flexCenter();
+  &_title {
+    h5 {
+      font-size: 3rem;
+      margin: 0;
+      color: v.$dark;
+    }
+  }
+  &_subtitle {
+    width: 60%;
+    p {
+      text-align: v.$c;
+      font-weight: 600;
+      color: v.$dark;
+      line-height: 1.5;
+      strong {
+        font-weight: 900;
+        text-transform: v.$upper;
+        color: v.$wt;
+        font-family: v.$halv;
+      }
+    }
+  }
+  &_marquee {
+    width: v.$fw;
+    @include v.flexCenter(v.$r, v.$sb);
+    gap: 1em;
+    padding: 0.5em 0;
+    &_each {
+      @include v.flexCenter();
+      min-height: 80px;
+      min-width: 200px;
+      border-radius: 10px;
+      margin: 0 0.5em;
+      position: v.$re;
+      img {
+        padding: 0.5em;
+        object-fit: contain;
+        width: v.$fw;
+        height: v.$fw;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  ._referencies {
+    &_subtitle {
+      width: 90%;
+    }
+  }
+}

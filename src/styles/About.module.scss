@@ -1,0 +1,158 @@
+@use "vars" as v;
+
+.paragraph {
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+  overflow: v.$h;
+}
+
+.collapsed {
+  max-height: 5.5em;
+  opacity: 1;
+}
+
+.expanded {
+  max-height: 1000px;
+  opacity: 1;
+}
+
+._aboutcompo {
+  width: v.$fw;
+  min-height: 60vh;
+  padding: v.$padd;
+  @include v.flexCenter();
+  &_content {
+    width: 50%;
+    h2 {
+      font-size: 3rem;
+      margin-bottom: 0;
+    }
+    p {
+      line-height: 2;
+      font-size: 1rem;
+    }
+  }
+  &_child {
+    width: 80%;
+    gap: 0.6em;
+    padding: 1em 0 2em 0;
+    display: v.$g;
+    grid-template-columns: repeat(8, 1fr);
+    &_each {
+      grid-column: span 4;
+      min-height: 200px;
+      border-radius: 10px;
+      background-position: v.$c;
+      background-size: v.$cv;
+      position: v.$re;
+      &:last-child {
+        @include v.flexCenter();
+        background-color: v.$dark;
+        ._aboutcompo_child_each_para {
+          width: 80%;
+          p {
+            line-height: 1.5;
+            font-weight: 600;
+            color: v.$text-color;
+          }
+        }
+      }
+      &_link {
+        width: 50px;
+        height: 50px;
+        background-color: v.$bg-light;
+        @include v.flexCenter();
+        position: v.$ab;
+        top: 0;
+        right: 0;
+        border-radius: 10px;
+        border-end-end-radius: 0;
+        border-start-start-radius: 0;
+        border-top-right-radius: 0;
+        z-index: 1;
+        &::after,
+        &::before {
+          content: "";
+          position: v.$ab;
+          width: 40px;
+          height: 40px;
+          rotate: -90deg;
+          box-shadow: 6px 6px 0 v.$bg-light;
+          border-bottom-right-radius: 20px;
+        }
+        &::before {
+          left: -40px;
+          top: 0px;
+        }
+        &::after {
+          right: 0px;
+          bottom: -40px;
+        }
+        svg {
+          position: v.$re;
+          top: 5px;
+          right: -5px;
+        }
+      }
+      &_title {
+        position: v.$ab;
+        bottom: 0;
+        left: 0;
+        border-radius: 10px;
+        background-color: v.$bg-light;
+        border-top-left-radius: 0;
+        border-bottom-right-radius: 0;
+        min-width: 100px;
+        padding: 0 1em;
+        p {
+          font-weight: 600;
+          text-transform: v.$upper;
+          text-decoration: underline 0.2em solid v.$dark;
+        }
+        &::after,
+        &::before {
+          content: "";
+          position: v.$ab;
+          width: 30px;
+          height: 30px;
+          rotate: -90deg;
+          border-bottom-right-radius: 10px;
+        }
+        &::before {
+          right: -30px;
+          bottom: 0px;
+          box-shadow: 6px 6px 0 v.$bg-light;
+          rotate: 90deg;
+        }
+        &::after {
+          left: 0px;
+          bottom: 51px;
+          rotate: 90deg;
+          box-shadow: 6px 6px 0 v.$bg-light;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  ._aboutcompo {
+    width: v.$fw;
+    min-height: 60vh;
+    padding: v.$padd;
+    @include v.flexCenter();
+    padding-bottom: 0;
+    &_content {
+      width: 90%;
+    }
+    &_child {
+      width: 90%;
+      gap: 0.6em;
+      padding: 1em 0 2em 0;
+      display: v.$g;
+      grid-template-columns: repeat(8, 1fr);
+      &_each {
+        grid-column: span 8;
+      }
+    }
+  }
+}

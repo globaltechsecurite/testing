@@ -1,0 +1,148 @@
+@use "vars" as v;
+
+._heroContact {
+  width: v.$fw;
+  min-height: v.$vh;
+  display: v.$g;
+  grid-template-columns: repeat(10, 1fr);
+  &_bgImage {
+    grid-column: span 4;
+    background-image: url("/assets/contact/bg.webp");
+    background-size: v.$cv;
+    background-position: 20% 60%;
+  }
+  &_contactForm {
+    grid-column: span 6;
+    @include v.flexCenter();
+    justify-content: flex-start;
+    &_child {
+      width: 90%;
+      h1 {
+        font-size: 2rem;
+      }
+      p {
+        a {
+          color: v.$red;
+          font-weight: 600;
+          text-decoration: 0.1em v.$red solid underline !important;
+        }
+      }
+      &_form {
+        display: v.$g;
+        grid-template-columns: repeat(8, 1fr);
+        gap: 1em;
+        &_inputHandler {
+          grid-column: span 4;
+          @include v.flexCenter();
+          align-items: flex-start;
+          position: v.$re;
+          span {
+            position: v.$ab;
+            left: 3%;
+            top: 45%;
+          }
+          label {
+            font-weight: 600;
+            margin-bottom: 0.3em;
+          }
+          input,
+          textarea {
+            width: v.$fw;
+            border-radius: 20px;
+            border: 0.12em solid v.$grey;
+            padding: 1em 0 1em 3em;
+            outline: v.$n;
+            background-color: v.$tr;
+          }
+          &:nth-child(3),
+          &:nth-child(4) {
+            span {
+              left: 1.9%;
+              top: 48%;
+            }
+          }
+
+          &:nth-child(3),
+          &:nth-child(4),
+          &:nth-child(5),
+          &:last-child {
+            grid-column: span 8;
+            input,
+            textarea {
+              width: 100%;
+            }
+          }
+          input[type="submit"] {
+            background-color: v.$dark;
+            color: v.$text-color;
+            font-weight: 600;
+            cursor: v.$p;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  ._heroContact {
+    &_bgImage {
+      grid-column: span 10;
+      height: 200px;
+    }
+    &_contactForm {
+      grid-column: span 10;
+      &_child {
+        width: 90%;
+        &_form {
+          &_inputHandler {
+            grid-column: span 8;
+            span {
+              position: v.$ab;
+              left: 3%;
+              top: 45%;
+            }
+            label {
+              font-weight: 600;
+              margin-bottom: 0.3em;
+            }
+            input,
+            textarea {
+              width: v.$fw;
+              border-radius: 20px;
+              border: 0.12em solid v.$grey;
+              padding: 1em 0 1em 3em;
+              outline: v.$n;
+              background-color: v.$tr;
+            }
+            &:nth-child(3),
+            &:nth-child(4) {
+              span {
+                position: v.$ab;
+                left: 3%;
+                top: 48%;
+              }
+            }
+
+            &:nth-child(3),
+            &:nth-child(4),
+            &:nth-child(5),
+            &:last-child {
+              grid-column: span 8;
+              input,
+              textarea {
+                width: 100%;
+              }
+            }
+            input[type="submit"] {
+              background-color: v.$dark;
+              color: v.$text-color;
+              font-weight: 600;
+              cursor: v.$p;
+            }
+          }
+        }
+      }
+    }
+  }
+}

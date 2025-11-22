@@ -1,0 +1,58 @@
+@use "vars" as v;
+._depaluminum {
+  width: v.$fw;
+  min-height: v.$vh;
+  @include v.flexCenter();
+  justify-content: flex-start;
+  overflow: v.$h;
+  position: v.$re;
+  &_hero {
+    width: v.$fw;
+    height: v.$vh;
+    background-image: url("/assets/pub-prod/aluminium.webp");
+    background-size: v.$cv;
+    background-position: v.$c;
+    @include v.flexCenter();
+    &_title,
+    &_para {
+      @include v.flexCenter();
+      width: 80%;
+    }
+    &_title {
+      h1 {
+        font-size: 5rem;
+        color: v.$text-color;
+        margin-bottom: 0;
+        text-align: v.$c;
+      }
+    }
+    &_para {
+      p {
+        text-align: v.$c;
+        color: v.$text-color;
+        line-height: 1.5;
+        strong {
+          color: v.$red;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  ._depaluminum {
+    &_hero {
+      text-align: v.$c;
+      &_title,
+      &_para {
+        @include v.flexCenter();
+        width: 95%;
+      }
+      &_title {
+        h1 {
+          font-size: 3rem;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,192 @@
+@use "vars" as v;
+
+._vitrage {
+  height: v.$fw;
+  width: v.$fw;
+  color: v.$dark;
+  @include v.flexCenter();
+  margin-top: 1em;
+  overflow: v.$h;
+  &_header {
+    width: 80%;
+    @include v.flexCenter();
+    position: v.$re;
+    &_title {
+      font-size: 3rem;
+      h2 {
+        font-size: 1em;
+        margin: 0;
+        text-align: v.$c;
+      }
+    }
+    &_subtitle {
+      width: 60%;
+      p {
+        text-align: v.$c;
+        font-weight: 600;
+        color: #333;
+        line-height: 1.5;
+        strong {
+          color: v.$red;
+          text-transform: v.$upper;
+          font-family: v.$halv;
+        }
+      }
+    }
+  }
+  &_child {
+    width: 90%;
+    margin: 0.5em 0;
+    &_self {
+      width: v.$fw;
+      &_title {
+        font-size: 3rem;
+        position: v.$re;
+        margin-bottom: 0.3em;
+        &::after {
+          content: "";
+          position: v.$ab;
+          width: v.$fw;
+          border-radius: 20px;
+          height: 5px;
+          left: 0;
+          bottom: 0;
+          background-color: v.$dark;
+        }
+        h2,
+        p {
+          text-transform: v.$upper;
+        }
+        h2 {
+          font-size: 1em;
+          margin-bottom: 0;
+        }
+        p {
+          margin-top: 0;
+          font-size: 0.5em;
+          color: v.$grey;
+        }
+      }
+      &_list {
+        grid-column: span 9;
+        ul {
+          li {
+            font-size: 1em;
+            svg {
+              position: v.$re;
+              top: 4px;
+              margin: 0 0.5em;
+            }
+          }
+        }
+      }
+      &_child {
+        display: v.$g;
+        grid-template-columns: repeat(9, 1fr);
+        gap: 1em;
+        &_each {
+          grid-column: span 3;
+          min-height: 350px;
+          background-size: v.$cv;
+          background-position: v.$c;
+          border-radius: 20px;
+          position: v.$re;
+          &:first-child {
+            background-image: url("/assets/vitrage/garde-corps-en-vitrage.avif");
+          }
+          &:nth-child(2) {
+            background-image: url("/assets/vitrage/garde-corps-en-vitrage.webp");
+          }
+          &:last-child {
+            background-image: url("/assets/vitrage/garde-corps-en-vitrage.jpg");
+          }
+        }
+      }
+    }
+    &:nth-child(3) &_self_child {
+      &_each {
+        &:first-child {
+          background-image: url("/assets/vitrage/garde-corps-en-acier-galvanisé-2.webp");
+        }
+        &:nth-child(2) {
+          background-image: url("/assets/vitrage/garde-corps-toles-1.jpg");
+        }
+        &:last-child {
+          background-image: url("/assets/vitrage/garde-corps-toles-2.jpg");
+        }
+      }
+    }
+    &:nth-child(4) &_self_child {
+      &_each {
+        &:first-child {
+          background-image: url("/assets/vitrage/5-rails.jpg");
+        }
+        &:nth-child(2) {
+          background-image: url("/assets/vitrage/5-rails-1.webp");
+        }
+        &:last-child {
+          background-image: url("/assets/vitrage/5-rails-2.webp");
+        }
+      }
+    }
+    &:nth-child(5) &_self_child {
+      &_each {
+        &:first-child {
+          background-image: url("/assets/vitrage/accordéon.webp");
+        }
+        &:nth-child(2) {
+          background-image: url("/assets/vitrage/cortina.jpg");
+        }
+        &:last-child {
+          background-image: url("/assets/vitrage/cortina.webp");
+        }
+      }
+    }
+    &:last-child &_self_child {
+      &_each {
+        &:first-child {
+          background-image: url("/assets/vitrage/vitrage-intelligence.jpg");
+        }
+        &:nth-child(2) {
+          background-image: url("/assets/vitrage/vitrage-intelligent.avif");
+        }
+        &:last-child {
+          background-image: url("/assets/vitrage/vitrage-intelligent.webp");
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 800px) {
+  ._vitrage {
+    &_header {
+      width: 95%;
+      text-align: v.$c;
+      &_title {
+        font-size: 2rem;
+      }
+      &_subtitle {
+        width: v.$fw;
+      }
+    }
+    &_child {
+      width: 95%;
+      &_self {
+        width: v.$fw;
+        &_title {
+          font-size: 2rem;
+        }
+        &_list {
+          ul {
+            padding: 0;
+          }
+        }
+        &_child {
+          &_each {
+            grid-column: span 9;
+          }
+        }
+      }
+    }
+  }
+}

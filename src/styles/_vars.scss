@@ -1,0 +1,54 @@
+$f: flex;
+$g: grid;
+$c: center;
+$sp: space-around;
+$sb: space-between;
+$sv: space-evenly;
+$cl: column;
+$w: wrap;
+$r: row;
+$b: bold;
+$cv: cover;
+$font: "Bricolage Grotesque", sans-serif;
+$halv: "helvetica neue heavy";
+$fw: 100%;
+$hw: 50%;
+$vh: 100vh;
+$tr: transparent;
+$n: none;
+$p: pointer;
+$padd: 2em 0;
+$re: relative;
+$ab: absolute;
+$h: hidden;
+$dark: #050505;
+$bg-light: #f8f8f8;
+$red: #e21f25;
+$text-color: #fff6f2;
+$wt: #fff;
+$grey: #adacac;
+$upper: uppercase;
+
+@mixin flexCenter($direction: $cl, $jcontent: $c) {
+  display: $f;
+  justify-content: $jcontent;
+  align-items: $c;
+  flex-direction: $direction;
+}
+
+@function redColor($value: 1) {
+  $red: rgba(255, 0, 0, $value);
+  @return $red;
+}
+
+@mixin buttons($w: 300px) {
+  font-family: $font;
+  width: $w;
+  padding: 1em 0;
+  font-weight: 600;
+  border: $n;
+  outline: $n;
+  cursor: $p;
+  background-color: $wt;
+  border-radius: 20px;
+}

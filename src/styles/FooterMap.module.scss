@@ -1,0 +1,53 @@
+@use "vars" as v;
+
+._map {
+  width: v.$fw;
+  height: v.$fw;
+  @include v.flexCenter();
+  overflow: v.$h;
+  padding-bottom: 1em;
+  &_footer {
+    width: 80%;
+    @include v.flexCenter();
+    p {
+      text-align: v.$c;
+      font-weight: 600;
+      line-height: 1.5;
+      span {
+        font-size: 2.5rem;
+        font-weight: 900;
+        text-transform: v.$upper;
+        color: v.$red;
+        font-family: v.$halv;
+      }
+    }
+  }
+  &_map {
+    width: 80%;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    iframe {
+      position: relative;
+      width: v.$fw;
+      min-width: 80%;
+      height: 450px;
+      border: 0;
+    }
+    a {
+      text-decoration: underline v.$dark 0.1em solid !important;
+      padding: 0.5em 0 !important;
+      display: v.$f;
+      font-weight: 600;
+    }
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  ._map {
+    &_footer {
+      width: 95%;
+    }
+    &_map {
+      width: 95%;
+    }
+  }
+}

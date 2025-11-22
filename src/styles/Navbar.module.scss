@@ -1,0 +1,233 @@
+@use "vars" as v;
+._navbar {
+  width: v.$fw;
+  min-height: 60px;
+  @include v.flexCenter();
+  border-bottom: 0.12em solid v.$dark;
+  position: v.$re;
+  &_child {
+    width: 98%;
+    display: v.$g;
+    grid-template-columns: repeat(8, 1fr);
+    border-radius: 20px;
+    align-items: v.$c;
+    &_logo {
+      grid-column: span 2;
+    }
+    &_contactBtn {
+      grid-column: span 2;
+      @include v.flexCenter(v.$r);
+      justify-content: flex-end;
+      align-items: flex-end;
+      a {
+        border: 0.12em solid v.$tr;
+        width: 150px;
+        height: 50px;
+        @include v.flexCenter(v.$r, v.$c);
+        border-radius: 100px;
+        font-weight: 600;
+        background-color: v.$dark;
+        color: v.$text-color;
+        span {
+          margin-left: 0.5em;
+        }
+        &:first-child {
+          @include v.flexCenter(v.$r, v.$c);
+          align-items: v.$c;
+          width: 50px;
+          margin-right: 0.2em;
+          span {
+            margin-left: 0;
+          }
+        }
+      }
+    }
+    &_links {
+      grid-column: span 4;
+      @include v.flexCenter();
+      ul {
+        width: 70%;
+        @include v.flexCenter(v.$r, v.$sb);
+        li {
+          font-size: 2rem;
+          position: v.$re;
+          &::after {
+            content: "";
+            position: v.$ab;
+            left: 0;
+            bottom: 0;
+            width: 20%;
+            height: 2px;
+            background-color: v.$dark;
+            transition: all ease-out 400ms;
+          }
+          &:hover::after {
+            width: v.$fw;
+            background-color: v.$red;
+          }
+          &:first-child {
+            ul {
+              background-color: v.$wt;
+              width: 300px !important;
+              border-radius: 10px;
+              margin: 0;
+              padding: 0.5em;
+              position: v.$ab;
+              top: v.$fw;
+              z-index: calc(9 * 9);
+              @include v.flexCenter();
+              align-items: flex-start;
+              display: v.$n;
+              li {
+                a {
+                  font-size: 0.6em;
+                  color: v.$grey;
+                  &:hover {
+                    color: v.$red;
+                  }
+                }
+              }
+            }
+            &:hover {
+              ul {
+                display: v.$f;
+              }
+            }
+          }
+          a {
+            font-size: 0.55em;
+            font-weight: 600;
+            cursor: v.$p;
+            transition: all ease-out 400ms;
+            &:hover {
+              color: v.$red;
+            }
+          }
+        }
+      }
+    }
+  }
+  &_mobile {
+    position: fixed;
+    left: -100%;
+    top: 10%;
+    width: v.$fw;
+    height: v.$fw;
+    background-color: v.$bg-light;
+    z-index: 9;
+    &_child {
+      position: v.$re;
+      @include v.flexCenter();
+      justify-content: flex-start;
+      width: 98%;
+      height: v.$fw;
+      &_links {
+        @include v.flexCenter();
+        width: v.$fw;
+        ul {
+          width: v.$fw;
+          @include v.flexCenter(v.$cl, v.$sb);
+          align-items: flex-start;
+          padding: 0;
+          li {
+            font-size: 2rem;
+            position: v.$re;
+            width: v.$fw;
+            padding: 0.5em 0 0.5em 0.5em;
+            span {
+              position: v.$ab;
+              right: 0;
+            }
+            &:first-child {
+              span {
+                right: -1.5%;
+              }
+              ul {
+                width: 300px !important;
+                border-radius: 10px;
+                margin: 0;
+                padding: 0.5em;
+                z-index: calc(9 * 9);
+                @include v.flexCenter();
+                align-items: flex-start;
+                li {
+                  border: v.$n !important;
+                  padding: 0em;
+                  a {
+                    font-size: 0.5em;
+                    color: v.$dark;
+                    &:hover {
+                      color: v.$red;
+                    }
+                  }
+                }
+              }
+            }
+            a {
+              font-size: 0.6em;
+              font-weight: 600;
+              cursor: v.$p;
+              transition: all ease-out 400ms;
+              &:hover {
+                color: v.$red;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 880px) {
+  ._navbar {
+    width: v.$fw;
+    min-height: 60px;
+    @include v.flexCenter();
+    border-bottom: 0.12em solid v.$dark;
+    overflow: v.$vh;
+    &_child {
+      @include v.flexCenter(v.$r, v.$sb);
+      width: v.$fw;
+      &_links {
+        display: v.$n;
+      }
+      &_contactBtn {
+        a {
+          display: v.$n !important;
+        }
+        background-color: v.$red;
+      }
+      &_logo {
+        @include v.flexCenter();
+        align-items: flex-start;
+        position: relative;
+        left: -15px;
+        width: 200px;
+      }
+      ul {
+        background-color: red;
+      }
+    }
+    &_mobile {
+      &_child {
+        &_links {
+          ul {
+            padding-bottom: 0 !important;
+            li {
+              padding: 0.5em 0em 0em 0.5em;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 330px) {
+  ._navbar {
+    img {
+      width: 280px !important;
+      object-fit: contain;
+    }
+  }
+}

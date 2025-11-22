@@ -1,0 +1,91 @@
+@use "vars" as v;
+._yearsofexperience {
+  width: v.$fw;
+  height: v.$fw;
+  @include v.flexCenter();
+  overflow: v.$h;
+  &_child {
+    width: 80%;
+    @include v.flexCenter();
+    align-items: flex-start;
+    justify-content: flex-start;
+    h4,
+    p {
+      margin: 0;
+    }
+    &_number {
+      position: v.$re;
+      h4 {
+        position: v.$re;
+        font-size: 8rem;
+        color: v.$red;
+        &::after {
+          content: "ANS";
+          position: v.$ab;
+          writing-mode: vertical-rl;
+          font-size: 1rem !important;
+          right: 15%;
+          top: 38%;
+        }
+      }
+    }
+    &_subnumber {
+      p {
+        margin: 0.1em 0;
+        font-size: 2rem;
+        font-weight: 600;
+      }
+    }
+  }
+  &_highlights {
+    width: 80%;
+    display: v.$g;
+    grid-template-columns: repeat(9, 1fr);
+    gap: 2em;
+    &_each {
+      grid-column: span 3;
+      h4 {
+        font-size: 2rem;
+        margin-bottom: 0;
+        color: v.$red;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  ._yearsofexperience {
+    &_child {
+      width: 95%;
+    }
+    &_highlights {
+      margin-top: 2em;
+      width: 95%;
+      &_each {
+        grid-column: span 9;
+        position: v.$re;
+        &::after {
+          position: v.$ab;
+          content: "";
+          width: v.$hw;
+          height: 5px;
+          background-color: v.$dark;
+          bottom: -10.6%;
+          right: -20%;
+        }
+        &:last-child {
+          &::after {
+            width: 90%;
+            right: -10%;
+          }
+        }
+        h4 {
+          margin-top: 0;
+        }
+        p {
+          margin-top: 0;
+        }
+      }
+    }
+  }
+}

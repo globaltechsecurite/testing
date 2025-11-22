@@ -1,0 +1,58 @@
+@use "vars" as v;
+.pdfContainer {
+  width: v.$fw;
+  min-height: 200px;
+  @include v.flexCenter();
+  margin: 0.5em 0;
+  &_child {
+    width: 80%;
+    border: 0.15em solid v.$dark;
+    padding: 2em 0;
+    border-radius: 10px;
+    margin-bottom: 1em;
+    h2,
+    h3,
+    p {
+      text-align: v.$c;
+    }
+  }
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+.buttonContainer a {
+  @include v.buttons();
+  min-width: 200px;
+  background-color: v.$dark;
+  color: v.$text-color;
+  border-radius: 100px;
+  text-align: v.$c;
+}
+
+.button {
+  @include v.buttons(200px);
+  background-color: v.$dark;
+  color: v.$text-color;
+  border-radius: 10px;
+  text-align: v.$c;
+  font-weight: 900;
+}
+
+@media only screen and (max-width: 600px) {
+  .buttonContainer {
+    @include v.flexCenter();
+    gap: 10px;
+  }
+  .pdfContainer {
+    width: v.$fw;
+    min-height: 200px;
+    @include v.flexCenter();
+    margin: 0.5em 0;
+    &_child {
+      width: 95%;
+    }
+  }
+}

@@ -1,0 +1,16 @@
+@use "vars" as v;
+.wistia_responsive_padding {
+  padding: 177.78% 0 0 0;
+  position: v.$re;
+}
+.wistia_responsive_wrapper {
+  height: v.$fw;
+  width: v.$fw;
+  position: v.$ab;
+  left: 0;
+  top: 0;
+  iframe {
+    height: v.$fw;
+    width: v.$fw;
+  }
+}
